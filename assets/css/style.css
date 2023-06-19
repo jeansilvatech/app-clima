@@ -209,6 +209,13 @@ form button i{
     }
     .container .card{
         background-color: transparent;
+        animation: cardMobile 2s ease-in-out;
+    }
+    @keyframes cardMobile {
+        0%{
+            opacity: 0;
+        }
+        
     }
     .container .card:hover{
         background-color: transparent;
