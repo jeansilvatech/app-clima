@@ -1,4 +1,3 @@
-// https://api.openweathermap.org/data/2.5/weather?q=brasilia&&units=metric&appid=3b9bf2db9f68c1b2bb535fc531b4c466&lang=pt_br
 const form = document.querySelector('form')
 const inputCity = document.querySelector('form input')
 const btnSearch = document.querySelector('form button')
