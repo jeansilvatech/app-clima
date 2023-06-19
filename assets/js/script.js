@@ -23,19 +23,38 @@ const language = "pt_br"
 
 
 const api = async (city)=>{
-    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=${language}`)
+    const res = await fetch(`${urlBase}q=${city}&units=metric&appid=${apiKey}&lang=${language}`)
     const data = await res.json()
-    return data; 
+    return data;
 }
    
-
-
+function cardReponsive(size){
+    if (window.matchMedia("(max-width:600px)").matches) {
+        card.style.height = '100%'
+      }else{
+        card.style.height = size
+      }
+}
+function renderCondition(){
+    if(!inputCity.value == ''){
+        render(inputCity.value)
+        inputCity.value = '' 
+        loading.style.display = 'flex'
+        errorMessage.style.display = 'none' 
+    setInterval(() => {
+        loading.style.display = 'none'
+     }, 5000);
+    }else{
+        errorMessage.style.display = 'flex'
+    }
+}
 const render = async (city)=>{
     const data = await api(city);
     if(data.name === undefined){
         errorMessage.style.display = 'flex'
         cardCity.style.display = 'none'
-        card.style.height = '100%'
+        const sizeMobile = "20%"
+        cardReponsive(sizeMobile)
     }
     cityName.innerText = data.name
     cityTemp.innerText = `${parseInt(data.main.temp)}°C`
@@ -45,12 +64,8 @@ const render = async (city)=>{
     descriptionIcon.setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`)
     countryFlag.setAttribute('src', `https://flagsapi.com/${data.sys.country}/flat/64.png`)
     cardCity.style.display = 'flex'
-    
-    if (window.matchMedia("(max-width:600px)").matches) {
-        card.style.height = '100%'
-      }else{
-        card.style.height = '60%'
-      }
+    const sizeDesktop = "60%"
+    cardReponsive(sizeDesktop)
     switch(data.weather[0].icon){
         case "01d":
             bgTemp.style.backgroundImage = `url("../../assets/img/01d.jpg")`;
@@ -67,26 +82,15 @@ const render = async (city)=>{
             default:
                 bgTemp.style.backgroundImage = ''
     }
+    
+}
 
-}
-function renderCondition(){
-    if(!inputCity.value == ''){
-        render(inputCity.value)
-        inputCity.value = '' 
-        loading.style.display = 'flex'
-        errorMessage.style.display = 'none' 
-    setInterval(() => {
-        loading.style.display = 'none'
-     }, 5000);
-    }else{
-        errorMessage.style.display = 'flex'
-    }
-}
 form.addEventListener('submit', (event)=>{
     event.preventDefault()
     renderCondition()
 })
 btnSearch.addEventListener('submit', (event)=>{
+
     event.preventDefault()
     renderCondition()
 })

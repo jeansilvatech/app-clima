@@ -16,7 +16,7 @@ body{
     height: 100vh;
     inset: 0;
     z-index: -1;
-    background-image: url('../../assets/img/01d.jpg');
+    background-image: url('../../assets/img/bg-default.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -49,11 +49,18 @@ body{
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     transition: 500ms;
+    animation: card 2s ease-in-out;
 }
 
 .container .card:hover{
     background-color: rgba(0, 53, 102);
     /* height: 80%; */
+}
+@keyframes card {
+    0%{
+        scale: 0;
+    }
+    
 }
 .card .card-title{
     font-size: 35px;
