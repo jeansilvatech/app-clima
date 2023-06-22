@@ -139,6 +139,12 @@ form button i{
     align-items: center;
     flex-direction: column;
 }
+.card-city .line{
+    width: 100%;
+    height: 2px;
+    background-color: aliceblue;
+    border-radius: 50%;
+}
 .card-city .local h2{
     font-size: 20px;
     font-weight: 400;
@@ -147,7 +153,6 @@ form button i{
     align-items: center;
     flex-direction: column;
     padding-bottom: 5px;
-    border-bottom: 1px solid;
 }
 .card-city .more{
     display: flex;
@@ -159,7 +164,6 @@ form button i{
 }
 .local h2 .city-name{
     margin: 0 5px;
-    letter-spacing: 4px;
 }
 .local h2 i{
     font-size: 30px;
