@@ -37,6 +37,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 .container .card{
     width: 30%;
@@ -234,6 +235,35 @@ form button i{
 }
 .loading img{
     width: 50px;
+}
+footer{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+}
+footer p{
+    font-size: 11px;
+    color: rgb(0, 8, 20);
+}
+footer p a{
+    font-weight: 600;
+}
+footer a{
+    color: rgb(0, 8, 20);
+    text-decoration: none;
+    transition: 500ms;
+}
+footer a:hover{
+    color: rgba(0, 53, 102, 0.7);
+}
+footer .social a{
+    font-size: 18px;
 }
 @media (max-width:600px) {
 
