@@ -15,7 +15,7 @@ const card = document.querySelector('.card')
 const cardCity = document.querySelector('.card-city')
 const loading = document.querySelector('.loading')
 const errorMessage = document.querySelector('.error')
-
+const logo = document.querySelector('.logo')
 const urlBase = "https://api.openweathermap.org/data/2.5/weather?"
 const apiKey = "3b9bf2db9f68c1b2bb535fc531b4c466"
 const language = "pt_br"
@@ -63,6 +63,7 @@ const render = async (city)=>{
     descriptionIcon.setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`)
     countryFlag.setAttribute('src', `https://flagsapi.com/${data.sys.country}/flat/64.png`)
     cardCity.style.display = 'flex'
+    logo.style.display = 'none'
     const sizeDesktop = "60%"
     cardReponsive(sizeDesktop)
     switch(data.weather[0].icon){

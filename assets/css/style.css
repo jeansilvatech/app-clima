@@ -1,16 +1,31 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body {
     width: 100vw;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
     background-color: #1c1c1c;
     color: aliceblue;
 }
-.bg-temp{
+
+.bg-temp {
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -22,16 +37,21 @@ body{
     background-size: cover;
     animation: bg 20s ease-in-out infinite;
 }
+
 @keyframes bg {
-    0%, 100%{
+
+    0%,
+    100% {
         scale: 1;
     }
-    50%{
+
+    50% {
         scale: 1.9;
     }
-    
+
 }
-.container{
+
+.container {
     width: 100%;
     height: 100%;
     display: flex;
@@ -39,7 +59,8 @@ body{
     align-items: center;
     flex-direction: column;
 }
-.container .card{
+
+.container .card {
     width: 30%;
     height: 25%;
     background-color: rgba(0, 53, 102, 0.1);
@@ -50,31 +71,45 @@ body{
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     transition: 500ms;
-    animation: card 2s ease-in-out;
+    animation: card 3s ease-in-out;
 }
 
-.container .card:hover{
+.container .card:hover {
     background-color: rgba(0, 53, 102);
 }
+
 @keyframes card {
-    0%{
+    0% {
         scale: 0;
     }
-    
+
 }
-.card .card-title{
+
+.logo img {
+    margin: 10px;
+    width: 100px;
+    animation: logo 3s ease-in-out;
+}
+
+@keyframes logo {
+    0% {
+        transform: translateY(100px) scale(1.2);
+    }
+
+}
+
+.card .card-title {
     font-size: 35px;
     font-weight: 500;
     margin-top: 10px;
     text-align: center;
 }
-form{
+
+form {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-form input{
+
+form input {
     height: 50px;
     width: 60%;
     padding: 10px 15px;
@@ -86,21 +121,24 @@ form input{
     color: #1c1c1c;
     font-weight: 500;
 }
-form input:where(:hover, :focus){
+
+form input:where(:hover, :focus) {
     transition: 500ms;
     background-color: rgba(0, 8, 20, 1);
     color: aliceblue;
     outline: none;
 }
 
-input::placeholder{
+input::placeholder {
     color: aliceblue;
     font-size: 16px;
 }
-input:focus::placeholder{
+
+input:focus::placeholder {
     color: transparent;
 }
-form button{
+
+form button {
     border: none;
     outline: none;
     border-radius: 0 25px 25px 0;
@@ -112,14 +150,17 @@ form button{
     transition: 500ms;
 
 }
-form button:hover{
+
+form button:hover {
     background-color: rgba(255, 195, 0, 0.8);
 }
-form button i{
+
+form button i {
     font-size: 20px;
     color: aliceblue;
 }
-.error{
+
+.error {
     display: none;
     justify-content: center;
     align-items: center;
@@ -128,102 +169,108 @@ form button i{
     margin-top: 5px;
     border-radius: 15px;
     padding: 5px 8px;
-    background-color:#8B0000;
+    background-color: #8B0000;
 }
-.error i{
+
+.error i {
     font-size: 18px;
     margin-right: 5px;
 }
-.card-city{
+
+.card-city {
     display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
-.card-city .line{
+
+.card-city .line {
     width: 100%;
     height: 2px;
     background-color: aliceblue;
     border-radius: 50%;
 }
-.card-city .local h2{
+
+.card-city .local h2 {
     font-size: 20px;
     font-weight: 400;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     padding-bottom: 5px;
 }
-.card-city .more{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.card-city .more p{
+
+.card-city .more p {
     margin: 10px;
 }
-.local h2 .city-name{
+
+.local h2 .city-name {
     margin: 0 5px;
 }
-.local h2 i{
+
+.local h2 i {
     font-size: 30px;
     animation: location 5s ease-in-out infinite;
 }
+
 @keyframes location {
-    0%, 100%{
+
+    0%,
+    100% {
         color: aliceblue;
     }
-    50%{
-        color:#B22222 ;
+
+    50% {
+        color: #B22222;
     }
-    
+
 }
-.local h2 .country{
+
+.local h2 .country {
     margin: 0 5px;
     width: 30px;
     object-fit: cover;
 }
-.card-city .local-temp p{
+
+.card-city .local-temp p {
     font-size: 45px;
-    margin:5px 0;
+    margin: 5px 0;
     font-weight: 700;
 }
 
-.card-city .description{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-.card-city .description p{
+.card-city .description p {
     text-transform: capitalize;
 }
-.more .humidity-text i{
+
+.more .humidity-text i {
     animation: humidity 5s ease-in-out infinite;
 }
+
 @keyframes humidity {
-    0%, 100%{
+
+    0%,
+    100% {
         color: aliceblue;
     }
-    50%{
-        color:#1E90FF ;
+
+    50% {
+        color: #1E90FF;
     }
-    
+
 }
-.more .wind-text i{
+
+.more .wind-text i {
     animation: wind 5s ease-in-out infinite;
 }
+
 @keyframes wind {
-    0%, 100%{
+
+    0%,
+    100% {
         color: aliceblue;
     }
-    50%{
-        color:#87CEEB ;
+
+    50% {
+        color: #87CEEB;
     }
-    
+
 }
-.loading{
+
+.loading {
     position: absolute;
     inset: 0;
     width: 100vw;
@@ -233,79 +280,106 @@ form button i{
     justify-content: center;
     align-items: center;
 }
-.loading img{
+
+.loading img {
     width: 50px;
 }
-footer{
+
+footer {
     width: 100%;
     padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     position: fixed;
     bottom: 0;
     text-align: center;
+    animation: footer 3s ease-in-out;
 }
-footer p{
+
+@keyframes footer {
+    0% {
+        transform: translateY(100px);
+    }
+
+}
+
+footer p {
     font-size: 11px;
     color: rgb(0, 8, 20);
 }
-footer p a{
+
+footer p a {
     font-weight: 600;
 }
-footer a{
+
+footer a {
     color: rgb(0, 8, 20);
     text-decoration: none;
     transition: 500ms;
 }
-footer a:hover{
+
+footer a:hover {
     color: rgba(0, 53, 102, 0.7);
 }
-footer .social a{
+
+footer .social a {
     font-size: 18px;
 }
+
 @media (max-width:600px) {
 
-    .container .card{
+    .container .card {
         width: 100%;
         height: 100%;
         border-radius: 0;
         justify-content: center;
     }
-    .card-city{
+
+    .card-city {
         height: 85%;
     }
-    .container .card{
+
+    .container .card {
         background-color: transparent;
         animation: cardMobile 2s ease-in-out;
     }
+
     @keyframes cardMobile {
-        0%{
+        0% {
             opacity: 0;
         }
-        
+
     }
-    .container .card:hover{
+
+    .container .card:hover {
         background-color: transparent;
     }
-    .card-city .local h2{
+
+    .card-city .local h2 {
         font-size: 25px;
     }
-    .card-city .local h2 i{
+
+    .card-city .local h2 i {
         font-size: 40px;
     }
-    .local h2 .country{
+
+    .local h2 .country {
         width: 40px;
     }
-    .card-city .local-temp p{
+
+    .card-city .local-temp p {
         font-size: 60px;
     }
-    .card .card-title{
-        margin: 20px;
+
+    .card .card-title {
+        margin-top: 20px;
         font-size: 30px;
     }
-    input::placeholder{
+
+    input::placeholder {
         font-size: 14px;
+    }
+
+    .logo {
+        display: none;
+
     }
 }
