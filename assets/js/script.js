@@ -90,7 +90,6 @@ form.addEventListener('submit', (event)=>{
     renderCondition()
 })
 btnSearch.addEventListener('submit', (event)=>{
-
     event.preventDefault()
     renderCondition()
 })

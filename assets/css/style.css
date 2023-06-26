@@ -61,8 +61,8 @@ body {
 }
 
 .container .card {
-    width: 30%;
-    height: 25%;
+    width:480px;
+    height: 200px;
     background-color: rgba(0, 53, 102, 0.1);
     display: flex;
     flex-direction: column;
@@ -76,6 +76,7 @@ body {
 
 .container .card:hover {
     background-color: rgba(0, 53, 102);
+    transform:scale(1.1);
 }
 
 @keyframes card {
@@ -84,7 +85,6 @@ body {
     }
 
 }
-
 .logo img {
     margin: 10px;
     width: 100px;
@@ -93,7 +93,10 @@ body {
 
 @keyframes logo {
     0% {
-        transform: translateY(100px) scale(1.2);
+        transform: translateY(100px) scale(1.5);
+    }
+    50%{
+        transform: translateY(-30px);
     }
 
 }
@@ -137,7 +140,6 @@ input::placeholder {
 input:focus::placeholder {
     color: transparent;
 }
-
 form button {
     border: none;
     outline: none;
