@@ -76,7 +76,6 @@ body {
 
 .container .card:hover {
     background-color: rgba(0, 53, 102);
-    transform:scale(1.1);
 }
 
 @keyframes card {
