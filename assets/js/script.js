@@ -16,12 +16,21 @@ const cardCity = document.querySelector('.card-city')
 const loading = document.querySelector('.loading')
 const errorMessage = document.querySelector('.error')
 const logo = document.querySelector('.logo')
+const logoImg = document.querySelector('.logo img')
+
 const preload = document.querySelector('.preload')
+const footer = document.querySelector('footer')
 const urlBase = "https://api.openweathermap.org/data/2.5/weather?"
 const apiKey = "3b9bf2db9f68c1b2bb535fc531b4c466"
 const language = "pt_br"
 setInterval(() => {
+    if(window.matchMedia("(max-width:600px)").matches){
+        card.classList.add('animation-card-mobile')
+    }
     preload.style.display = 'none'
+    logoImg.classList.add('animation-logo')
+    card.classList.add('animation-card')
+    footer.classList.add('animation-footer')
  }, 5000);
 const api = async (city)=>{
     const res = await fetch(`${urlBase}q=${city}&units=metric&appid=${apiKey}&lang=${language}`)

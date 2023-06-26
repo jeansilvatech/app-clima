@@ -71,9 +71,11 @@ body {
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     transition: 500ms;
+    
+}
+.animation-card{
     animation: card 3s ease-in-out;
 }
-
 .container .card:hover {
     background-color: rgba(0, 53, 102);
 }
@@ -87,9 +89,11 @@ body {
 .logo img {
     margin: 10px;
     width: 100px;
+    
+}
+.animation-logo{
     animation: logo 3s ease-in-out;
 }
-
 @keyframes logo {
     0% {
         transform: translateY(100px) scale(1.5);
@@ -281,7 +285,6 @@ form button i {
     align-items: center;
     z-index: 999;
     transition: 500ms;
-    /* animation: preload 5s ease-in-out; */
 }
 .preload .circle-load{
     width: 200px;
@@ -351,9 +354,11 @@ footer {
     position: fixed;
     bottom: 0;
     text-align: center;
+    
+}
+.animation-footer{
     animation: footer 3s ease-in-out;
 }
-
 @keyframes footer {
     0% {
         transform: translateY(100px);
@@ -399,9 +404,11 @@ footer .social a {
 
     .container .card {
         background-color: transparent;
+        
+    }
+    .animation-card-mobile{
         animation: cardMobile 2s ease-in-out;
     }
-
     @keyframes cardMobile {
         0% {
             opacity: 0;
