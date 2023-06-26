@@ -16,11 +16,13 @@ const cardCity = document.querySelector('.card-city')
 const loading = document.querySelector('.loading')
 const errorMessage = document.querySelector('.error')
 const logo = document.querySelector('.logo')
+const preload = document.querySelector('.preload')
 const urlBase = "https://api.openweathermap.org/data/2.5/weather?"
 const apiKey = "3b9bf2db9f68c1b2bb535fc531b4c466"
 const language = "pt_br"
-
-
+setInterval(() => {
+    preload.style.display = 'none'
+ }, 5000);
 const api = async (city)=>{
     const res = await fetch(`${urlBase}q=${city}&units=metric&appid=${apiKey}&lang=${language}`)
     const data = await res.json()
@@ -92,4 +94,7 @@ form.addEventListener('submit', (event)=>{
 btnSearch.addEventListener('submit', (event)=>{
     event.preventDefault()
     renderCondition()
+})
+window.document.addEventListener('DOMContentLoaded', ()=>{
+
 })
