@@ -23,15 +23,19 @@ const footer = document.querySelector('footer')
 const urlBase = "https://api.openweathermap.org/data/2.5/weather?"
 const apiKey = "3b9bf2db9f68c1b2bb535fc531b4c466"
 const language = "pt_br"
-setInterval(() => {
-    if(window.matchMedia("(max-width:600px)").matches){
-        card.classList.add('animation-card-mobile')
-    }
-    preload.style.display = 'none'
-    logoImg.classList.add('animation-logo')
-    card.classList.add('animation-card')
-    footer.classList.add('animation-footer')
- }, 5000);
+
+function loaderEnter(){
+    setInterval(() => {
+        if(window.matchMedia("(max-width:600px)").matches){
+            card.classList.add('animation-card-mobile')
+        }
+        preload.style.display = 'none'
+        logoImg.classList.add('animation-logo')
+        card.classList.add('animation-card')
+        footer.classList.add('animation-footer')
+     }, 5000);
+}
+loaderEnter()
 const api = async (city)=>{
     const res = await fetch(`${urlBase}q=${city}&units=metric&appid=${apiKey}&lang=${language}`)
     const data = await res.json()
@@ -53,7 +57,7 @@ function renderCondition(){
         errorMessage.style.display = 'none' 
     setInterval(() => {
         loading.style.display = 'none'
-     }, 5000);
+     }, 3000);
     }else{
         errorMessage.style.display = 'flex'
     }
@@ -77,7 +81,8 @@ const render = async (city)=>{
     logo.style.display = 'none'
     const sizeDesktop = "60%"
     cardReponsive(sizeDesktop)
-    switch(data.weather[0].icon){
+    const iconTemp = data.weather[0].icon 
+    switch(iconTemp){
         case "01d":
             bgTemp.style.backgroundImage = `url("../../assets/img/01d.jpg")`;
          break;
@@ -104,6 +109,4 @@ btnSearch.addEventListener('submit', (event)=>{
     event.preventDefault()
     renderCondition()
 })
-window.document.addEventListener('DOMContentLoaded', ()=>{
 
-})
