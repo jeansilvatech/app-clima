@@ -209,9 +209,8 @@ form button i {
 
 .local h2 i {
     font-size: 30px;
-    animation: location 5s ease-in-out infinite;
 }
-
+/* 
 @keyframes location {
 
     0%,
@@ -223,7 +222,7 @@ form button i {
         color: #B22222;
     }
 
-}
+} */
 
 .local h2 .country {
     margin: 0 5px;
@@ -240,7 +239,17 @@ form button i {
 .card-city .description p {
     text-transform: capitalize;
 }
-
+.more .humidity-text,
+.more .wind-text{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.more .humidity-text i,
+.more .wind-text i{
+    margin-right: 5px;
+    font-size:20px;
+}
 .more .humidity-text i {
     animation: humidity 5s ease-in-out infinite;
 }
